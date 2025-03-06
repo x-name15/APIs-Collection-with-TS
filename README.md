@@ -8,12 +8,13 @@ Feel free to improve it, use it and whatever you want!
 ### Structure of the files:
 - src
    - api
-      - moviecontrollers
+      - controllers
           - movie.controller.ts
       - routes
           - movie.routes.ts
       - structures
-          - movie.models.ts 
+          - genre.model.ts
+          - movie.model.ts 
    - node-modules
    - server.ts
    - .env

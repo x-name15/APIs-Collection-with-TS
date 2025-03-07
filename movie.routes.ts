@@ -1,6 +1,6 @@
 import { Router } from "express";
 const router: Router = Router();
-import { getMovies, getMovieById, createMovie, updateMovie, deleteMovie } from "../moviecontrollers/movie.controller";
+import { getMovies, getMovieById, createMovie, updateMovie, deleteMovie } from "../controllers/movie.controller";
 
 router.get("/", getMovies);
 router.get("/:id", getMovieById);

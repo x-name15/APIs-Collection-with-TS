@@ -1,13 +1,11 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 interface IGenre extends Document {
-    movieId: mongoose.Types.ObjectId;
-    genres: string[];
+    genre: string; // Solo permitir string
 }
 
 const GenreSchema = new Schema({
-    movieId: { type: mongoose.Schema.Types.ObjectId, ref: "Movie", required: true },
-    genres: { type: [String], required: true },
+    genre: { type: String, required: true } // Solo permitir string
 });
 
 export default mongoose.model<IGenre>("Genre", GenreSchema);

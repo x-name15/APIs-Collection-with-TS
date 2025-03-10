@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "67c9b6078ca92547bd92ec66"
+  },
+  "genre": "Space Opera",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c9b6078ca92547bd92ec68"
+  },
+  "genre": "Fantasia",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c9b6078ca92547bd92ec6a"
+  },
+  "genre": "Drama",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67c9b7488ca92547bd92ec73"
+  },
+  "genre": "Infantil",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cabcd31e94485da07950ed"
+  },
+  "genre": "Ciencia Ficción",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cabcd31e94485da07950ef"
+  },
+  "genre": "Anime",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cabcd31e94485da07950f1"
+  },
+  "genre": "Animación",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cabcd31e94485da07950f3"
+  },
+  "genre": "Cine Musical",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67cabe961e94485da07950fa"
+  },
+  "genre": "Suspenso",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ceb5d28daa9e05308ca35d"
+  },
+  "genre": "Aventura",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ceb5d28daa9e05308ca35f"
+  },
+  "genre": "Película de superhéroes",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67ceb5d28daa9e05308ca361"
+  },
+  "genre": "Accion",
+  "__v": 0
+}]

@@ -6,7 +6,7 @@ A really basic experiment to learn how typescript works or behave when managing 
 Feel free to improve it, use it and whatever you want!
 
 ### Structure of the files:
-![strcutdshfjdkshfdseschemabakanardoasibienfinolingo](/images/schema.PNG)
+![strcutdshfjdkshfdseschemabakanardoasibienfinolingo](/images/schema.png)
 
 ### Things to keep in mind:
 - all the code use dotenv to protect the credentials (thats silly bcs all is running on local but i want it to put it xD)

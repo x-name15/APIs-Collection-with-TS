@@ -15,6 +15,6 @@ A really basic experiment to learn how typescript works or behave when managing 
    - title {
    - director {
    - year {
-   - genre {
+   - genres ["",""]
 
 

@@ -3,3 +3,4 @@ nodemon
 mongoose
 typescript
 dotenv
+npm i --save-dev @types/node

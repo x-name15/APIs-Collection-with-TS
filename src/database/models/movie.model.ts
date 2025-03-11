@@ -1,17 +1,9 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { model, Document } from "mongoose";
+import MovieSchema from "../schemas/movie.schema";
+import { IMovie } from "../../structures/interfaces/movie.interface";
 
-interface IMovie extends Document {
-    title: string;
-    director: string;
-    year: number;
-    genres: mongoose.Types.ObjectId[]; // Arreglo de ObjectId que referencia a los géneros
-}
+interface IMovieDocument extends IMovie, Document {}
 
-const MovieSchema = new Schema({
-    title: { type: String, required: true },
-    director: { type: String, required: true },
-    year: { type: Number, required: true },
-    genres: [{ type: mongoose.Schema.Types.ObjectId, ref: "Genre" }] // Referencia a los géneros
-});
+const Movie = model<IMovieDocument>("Movie", MovieSchema);
 
-export default mongoose.model<IMovie>("Movie", MovieSchema);
+export default Movie;

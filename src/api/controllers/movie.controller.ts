@@ -28,36 +28,35 @@ export const getMovieById = async (req: Request, res: Response): Promise<void> =
     res.status(500).json({ message: "Error al obtener la película", error: error.message });
   }
 };
-// Crear una nueva película y sus géneros
 export const createMovie = async (req: Request, res: Response): Promise<void> => {
   try {
     const { title, director, year, genres } = req.body;
 
-    if (!genres || genres.length === 0) {
+    if (!genres || (Array.isArray(genres) && genres.length === 0)) {
       res.status(400).json({ message: "Se requiere al menos un género" });
       return;
     }
-    // Convertir géneros a ObjectId
-    const genreIds = await Promise.all(genres.map(async (genre: string) => {
-      const genreDoc = await Genre.findOne({ genre });
-      if (genreDoc) {
-        return genreDoc._id;
-      } else {
-        const newGenre = new Genre({ genre });
-        await newGenre.save();
-        return newGenre._id;
-      }
-    }));
 
-    // Crear película
+    // Verificamos si los géneros existen o los creamos
+    const genreIds = await Promise.all(
+      genres.map(async (genreName: string) => {
+        let genre = await Genre.findOne({ name: genreName });
+        if (!genre) {
+          genre = new Genre({ name: genreName });
+          await genre.save();
+        }
+        return genre._id;
+      })
+    );
+
+    // Creamos la película con los IDs de los géneros
     const newMovie = new Movie({ title, director, year, genres: genreIds });
     await newMovie.save();
-    console.log("Película guardada:", newMovie);
 
     res.status(201).json({ message: "Película creada con éxito", movie: newMovie });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error al crear la película:", error);
-    res.status(500).json({ message: "Error al crear la película", error: error.message });
+    res.status(500).json({ message: "Error al crear la película" });
   }
 };
 

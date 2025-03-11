@@ -1,11 +1,9 @@
-import mongoose, { Schema, Document } from "mongoose";
+import { model, Document } from "mongoose";
+import GenreSchema from "../schemas/genre.schema";
+import { IGenre } from "../../structures/interfaces/genre.interface";
 
-interface IGenre extends Document {
-    genre: string; // Solo permitir string
-}
+interface IGenreDocument extends IGenre, Document {}
 
-const GenreSchema = new Schema({
-    genre: { type: String, required: true } // Solo permitir string
-});
+const Genre = model<IGenreDocument>("Genre", GenreSchema);
 
-export default mongoose.model<IGenre>("Genre", GenreSchema);
+export default Genre;

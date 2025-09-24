@@ -4,3 +4,4 @@ mongoose
 npm install typescript --save-dev
 dotenv
 npm i --save-dev @types/node
+vitest

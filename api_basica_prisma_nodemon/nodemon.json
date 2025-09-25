@@ -1,0 +1,6 @@
+{
+  "watch": ["src"],
+  "ext": "ts,js,json",
+  "ignore": ["dist", "node_modules"],
+  "exec": "ts-node --project /app/tsconfig.build.json src/server.ts"
+}

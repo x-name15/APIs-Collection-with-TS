@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: movies
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+
+  api:
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./tsconfig.build.json:/app/tsconfig.build.json
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/movies
+    ports:
+      - "7000:7000"
+    command: sh /app/bin/entrypoint.sh

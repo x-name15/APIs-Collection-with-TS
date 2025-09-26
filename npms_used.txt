@@ -6,3 +6,4 @@ dotenv
 npm i --save-dev @types/node
 vitest
 npm i -D @vitest/coverage-v8
+@prisma/client

@@ -1,0 +1,26 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+      - ./frontend:/app/frontend
+    ports:
+      - "7000:7000"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    command: sh /app/bin/entrypoint.sh
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:

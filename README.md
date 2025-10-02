@@ -1,8 +1,8 @@
-# Basic-API-ts-MongoDB
-This is a Basic API of Movies managed on mongoDB and typed all the scripting side with TS
+# APIs-Collection-with-TS
+This is a API Collection (of Movies) managed on mongoDB and PostgreSQL with TypeScript
 
 ## Hey, welcome back mate
-A really basic experiment to learn how typescript works or behave when managing databases, i know its not the best but was an excercise of my scoolarship that the have left me to do
+A small collection of APIs (just one, i mean its only a Movie API) with different packages and DBs divided into folders with their respective levels
 
 ### Feel free to improve it, use it and whatever you want!
 

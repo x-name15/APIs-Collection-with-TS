@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    volumes:
+      - ./src:/app/src
+      - ./frontend:/app/frontend
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+    ports:
+      - "7000:7000"
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    command: sh /app/src/bin/entrypoint.sh
+
+  consumer:
+    build: .
+    volumes:
+      - ./consumer:/app/consumer
+      - ./package.json:/app/package.json
+      - ./tsconfig.json:/app/tsconfig.json
+    depends_on:
+      - api
+      - mongodb
+      - rabbitmq
+    env_file:
+      - .env
+    command: sh /app/consumer/bin/consumer_entrypoint.sh
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+volumes:
+  mongo_data:

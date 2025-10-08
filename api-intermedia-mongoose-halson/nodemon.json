@@ -1,6 +1,0 @@
-{
-  "watch": ["src", "frontend"],
-  "ext": "ts,js,json,html,css",
-  "ignore": ["dist", "node_modules"],
-  "exec": "ts-node --project /app/tsconfig.json src/server.ts"
-}
